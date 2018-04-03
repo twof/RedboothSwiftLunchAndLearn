@@ -16,21 +16,43 @@ extension String {
 /// Features I want to show off
 
 /// Double lables, default params, and how they enable progressive disclosure UX
-func add(_ first: Int, to second: Int) -> Int {
-    return first + second
-}
 
-print("Addition:", add(10, to: 30))
-
-// With default params
-Alamofire.request("https://catfact.ninja/fact").responseJSON { (response) in
-    // Do what you need with the response
-}
-
-// Without
-Alamofire.request("https://catfact.ninja/fact", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: nil, options: .allowFragments) { (response) in
-    // Do what you need with the response
-}
+//func add(firstNumber: Int, secondNumber: Int) -> Int {
+//    return firstNumber + secondNumber
+//}
+//
+//add(firstNumber: 10, secondNumber: 30)
+//
+//func add(_ firstNumber: Int, to secondNumber: Int) -> Int {
+//    return firstNumber + secondNumber
+//}
+//
+//print("Addition:", add(10, to: 30))
+//
+//class Person {
+//    let name: String
+//    let age: Int
+//    let numberOfLegs: Int
+//
+//    init(name: String, age: Int, numberOfLegs: Int=2) {
+//        self.name = name
+//        self.age = age
+//        self.numberOfLegs = numberOfLegs
+//    }
+//}
+//
+//let alex = Person(name: "Alex", age: 21)
+//
+//
+//// With default params
+//Alamofire.request("https://catfact.ninja/fact").responseJSON { (response) in
+//    // Do what you need with the response
+//}
+//
+//// Without
+//Alamofire.request("https://catfact.ninja/fact", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: nil, options: .allowFragments) { (response) in
+//    // Do what you need with the response
+//}
 
 /// Safety features:
 /// Safety of types http://ttendency.cs.ucl.ac.uk/projects/type_study/documents/type_study.pdf
@@ -48,6 +70,42 @@ Alamofire.request("https://catfact.ninja/fact", method: .get, parameters: nil, e
 /// Lower developer cognitive load
 
 /// Protocol oriented programming and how it enables simple dependency injection
+
+//protocol Greetable {
+//    func getGreeting(completion: (String?) -> Void)
+//}
+//
+//struct GreetingManager: Greetable {
+//    func getGreeting(completion: (String?) -> Void) {
+//        // Get greeting from the server
+//        // return it
+//    }
+//}
+//
+//class FriendlyPerson {
+//    let greetingManager: Greetable
+//
+//    init(greetingManager: Greetable=GreetingManager()) {
+//        self.greetingManager = greetingManager
+//    }
+//}
+//
+//let friendlyPersonInProduction = FriendlyPerson()
+//
+//struct GreetingSuccessMock: Greetable {
+//    func getGreeting(completion: (String?) -> Void) {
+//        completion("Hey there!")
+//    }
+//}
+//
+//struct GreetingFailMock: Greetable {
+//    func getGreeting(completion: (String?) -> Void) {
+//        completion(nil)
+//    }
+//}
+//
+//let friendlyPersonInTesting = FriendlyPerson(greetingManager: GreetingSuccessMock())
+//let nilPersonInTesting = FriendlyPerson(greetingManager: GreetingFailMock())
 
 /// Protocol conformance and other extension features
 
@@ -80,7 +138,7 @@ let shelly = Person(name: "Shelly", age: 45, height: 65)
 
 do {
     let jsonShelly = try JSONEncoder().encode(shelly).asString()
-    
+
     print(jsonShelly!)
 } catch {
     print(error)
@@ -88,6 +146,7 @@ do {
 
 
 /// Unicode identifiers
+let 🐮 = 10
 
 /// The power of enums with params/associated types
 
